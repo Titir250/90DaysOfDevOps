@@ -14,11 +14,51 @@ task:
 
 - Create a Dockerfile for a simple web application (e.g. a Node.js or Python app)
 
+
+# Use the official Python image from the Docker Hub
+FROM python:3.9-slim
+# Set the working directory in the container
+WORKDIR /app
+# Copy the dependencies file to the working directory
+COPY requirements.txt .
+# Install Flask and other dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+# Copy the content of the local src directory to the working directory
+COPY . .
+# Expose port 5000 to the outside world
+EXPOSE 5000
+# Command to run the application
+CMD ["python", "app.py"]
+
+
+
+
 - Build the image using the Dockerfile and run the container
+
+docker build -t simple-python-app:latest .
+
+docker run -d -p 5000:5000 simple-python-app:latest
+0efdf11bb270ebd18fd3fd25dac73f773c9d18e03dc42088660a2470ebc8044f
+
+docker images
+REPOSITORY           TAG        IMAGE ID       CREATED              SIZE
+simple-python-app    latest     a8f1d8870987   33 seconds ago       137MB
+<none>               <none>     78ffc882d31d   About a minute ago   137MB
+
+
 
 - Verify that the application is working as expected by accessing it in a web browser
 
+yes, running..
+
 - Push the image to a public or private repository (e.g. Docker Hub )
+
+
+docker login
+docker tag simple-python-app titirroy/simple-python-app
+docker push titirroy/simple-python-app
+
+
 
 For Refference Project visit [here](https://youtu.be/Tevxhn6Odc8)
 
