@@ -59,10 +59,21 @@ docker tag simple-python-app titirroy/simple-python-app
 docker push titirroy/simple-python-app
 
 
+git init
+git add .
+git status
+git config --global user.name "Titir Roy"
+git config --global user.email "titirroy1@gmail.com"
+git commit -m "c1"
+git remote -v set-url origin https://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@github.com/Titir250/simple-python-app
+git remote -v
+git push -u origin main
+
 
 For Refference Project visit [here](https://youtu.be/Tevxhn6Odc8)
 
 If you want to dive further, Watch [bootcamp](https://youtube.com/playlist?list=PLlfy9GnSVerRqYJgVYO0UiExj5byjrW8u)
+
 
 You can share the learning with everyone over linkedin and tag us along 😃
 
