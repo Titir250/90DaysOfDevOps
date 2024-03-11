@@ -20,11 +20,42 @@ Aj thodi padhai krte hai on Docker Compose 😃
 
 Learn how to use the docker-compose.yml file, to set up the environment, configure the services and links between different containers, and also to use environment variables in the docker-compose.yml file.
 
+
+ubuntu@ip-172-31-91-182:~/projects/nginx-mysql$ docker-compose up
+Creating network "nginx-mysql_default" with the default driver
+Pulling web (nginx:latest)...
+latest: Pulling from library/nginx
+e1caac4eb9d2: Already exists
+88f6f236f401: Pull complete
+c3ea3344e711: Pull complete
+cc1bb4345a3a: Pull complete
+da8fa4352481: Pull complete
+c7f80e9cdab2: Pull complete
+18a869624cb6: Pull complete
+Digest: sha256:c26ae7472d624ba1fafd296e73cecc4f93f853088e6a9c13c0d52f6ca5865107
+Status: Downloaded newer image for nginx:latest
+Pulling db (mysql:)...
+latest: Pulling from library/mysql
+9a5c778f631f: Pull complete
+9e77c3a95bf2: Pull complete
+8b279a2086e0: Pull complete
+c8bfbcde7882: Pull complete
+
+ubuntu@ip-172-31-91-182:~/projects/nginx-mysql$ docker-compose down
+Removing nginx-mysql_web_1 ... done
+Removing nginx-mysql_db_1  ... done
+Removing network nginx-mysql_default
+
+
+
+
 [Sample docker-compose.yaml file](https://github.com/LondheShubham153/90DaysOfDevOps/blob/master/2023/day18/docker-compose.yaml)
 
 ## Task-2
 
 - Pull a pre-existing Docker image from a public repository (e.g. Docker Hub) and run it on your local machine. Run the container as a non-root user (Hint- Use `usermod ` command to give user permission to docker). Make sure you reboot instance after giving permission to user.
+
+  
 - Inspect the container's running processes and exposed ports using the docker inspect command.
 - Use the docker logs command to view the container's log output.
 - Use the docker stop and docker start commands to stop and start the container.
