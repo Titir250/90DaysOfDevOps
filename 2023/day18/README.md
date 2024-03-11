@@ -69,7 +69,11 @@ Configure a credential helper to remove this warning. See
 https://docs.docker.com/engine/reference/commandline/login/#credentials-store
 
 Login Succeeded
+
+
 docker pull busybox
+
+
 Using default tag: latest
 latest: Pulling from library/busybox
 7b2699543f22: Pull complete
