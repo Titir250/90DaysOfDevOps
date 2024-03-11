@@ -34,7 +34,11 @@ Learn how to use the docker-compose.yml file, to set up the environment, configu
 
 - Make sure docker is installed and system is updated (This is already been completed as a part of previous tasks):
 - sudo usermod -a -G docker $USER
+sudo usermod -aG docker $USER
+
 - Reboot the machine.
+
+sudo reboot
 
 For reference you can watch this [video](https://youtu.be/Tevxhn6Odc8)
 
