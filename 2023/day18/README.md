@@ -55,11 +55,78 @@ Removing network nginx-mysql_default
 
 - Pull a pre-existing Docker image from a public repository (e.g. Docker Hub) and run it on your local machine. Run the container as a non-root user (Hint- Use `usermod ` command to give user permission to docker). Make sure you reboot instance after giving permission to user.
 
+ docker login
+Authenticating with existing credentials...
+WARNING! Your password will be stored unencrypted in /home/ubuntu/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credentials-store
+
+Login Succeeded
+docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+7b2699543f22: Pull complete
+Digest: sha256:650fd573e056b679a5110a70aabeb01e26b76e545ec4b9c70a9523f2dfaf18c6
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+
+
   
 - Inspect the container's running processes and exposed ports using the docker inspect command.
+
+ docker inspect bd06533cbd0e
+[
+    {
+        "Id": "bd06533cbd0e3bbba3901ac31f703775d5a0538b74b1f53d54f9bd9786ca0ead",
+        "Created": "2024-03-11T13:41:58.50788403Z",
+        "Path": "sh",
+        "Args": [],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 1291,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2024-03-11T13:41:58.896217225Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:ba5dc23f65d4cc4a4535bce55cf9e63b068eb02946e3422d3587e8ce803b6aab",
+        "ResolvConfPath": "/var/lib/docker/containers/bd06533cbd0e3bbba3901ac31f703775d5a0538b74b1f53d54f9bd9786ca0ead/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/bd06533cbd0e3bbba3901ac31f703775d5a0538b74b1f53d54f9bd9786ca0ead/hostname",
+
+
 - Use the docker logs command to view the container's log output.
+
+docker logs bd065
+/ # busybox shell
+shell: applet not found
+/ # bash
+sh: bash: not found
+/ # touch a b c d
+/ # ls
+a      b      bin    c      d      dev    etc    home   lib    lib64  proc   root   sys    tmp    usr    var
+/ # mkdir holala
+/ # ls
+a       b       bin     c       d       dev     etc     holala  home    lib     lib64   proc    root    sys     tmp     usr     var
+
+
 - Use the docker stop and docker start commands to stop and start the container.
+
+
+docker stop 987621b3fba1
+987621b3fba1
+
+
 - Use the docker rm command to remove the container when you're done.
+
+docker rm 41dcbc8b689d
+41dcbc8b689d
+ubuntu@ip-172-31-91-182:~$
+
 
 ## How to run Docker commands without sudo?
 
