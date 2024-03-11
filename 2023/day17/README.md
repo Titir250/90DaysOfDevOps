@@ -55,7 +55,11 @@ yes, running..
 
 
 docker login
+
+
 docker tag simple-python-app titirroy/simple-python-app
+
+
 docker push titirroy/simple-python-app
 
 
