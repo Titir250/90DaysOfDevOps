@@ -21,7 +21,9 @@ Aj thodi padhai krte hai on Docker Compose 😃
 Learn how to use the docker-compose.yml file, to set up the environment, configure the services and links between different containers, and also to use environment variables in the docker-compose.yml file.
 
 
-ubuntu@ip-172-31-91-182:~/projects/nginx-mysql$ docker-compose up
+docker-compose up
+
+
 Creating network "nginx-mysql_default" with the default driver
 Pulling web (nginx:latest)...
 latest: Pulling from library/nginx
@@ -41,7 +43,10 @@ latest: Pulling from library/mysql
 8b279a2086e0: Pull complete
 c8bfbcde7882: Pull complete
 
-ubuntu@ip-172-31-91-182:~/projects/nginx-mysql$ docker-compose down
+
+docker-compose down
+
+
 Removing nginx-mysql_web_1 ... done
 Removing nginx-mysql_db_1  ... done
 Removing network nginx-mysql_default
@@ -56,6 +61,8 @@ Removing network nginx-mysql_default
 - Pull a pre-existing Docker image from a public repository (e.g. Docker Hub) and run it on your local machine. Run the container as a non-root user (Hint- Use `usermod ` command to give user permission to docker). Make sure you reboot instance after giving permission to user.
 
  docker login
+
+ 
 Authenticating with existing credentials...
 WARNING! Your password will be stored unencrypted in /home/ubuntu/.docker/config.json.
 Configure a credential helper to remove this warning. See
@@ -75,6 +82,8 @@ docker.io/library/busybox:latest
 - Inspect the container's running processes and exposed ports using the docker inspect command.
 
  docker inspect bd06533cbd0e
+
+ 
 [
     {
         "Id": "bd06533cbd0e3bbba3901ac31f703775d5a0538b74b1f53d54f9bd9786ca0ead",
@@ -118,14 +127,17 @@ a       b       bin     c       d       dev     etc     holala  home    lib     
 
 
 docker stop 987621b3fba1
+
+
 987621b3fba1
 
 
 - Use the docker rm command to remove the container when you're done.
 
 docker rm 41dcbc8b689d
+
 41dcbc8b689d
-ubuntu@ip-172-31-91-182:~$
+
 
 
 ## How to run Docker commands without sudo?
