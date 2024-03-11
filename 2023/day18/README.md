@@ -115,6 +115,8 @@ docker.io/library/busybox:latest
 - Use the docker logs command to view the container's log output.
 
 docker logs bd065
+
+
 / # busybox shell
 shell: applet not found
 / # bash
