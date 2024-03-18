@@ -21,9 +21,56 @@ When we run a container, it has its own storage space that is only accessible by
 _hints:_
 
 - Use the `docker-compose up` command with the `-d` flag to start a multi-container application in detached mode.
+
+docker-compose up -d
+two-tier-flask-app_mysql_1 is up-to-date
+two-tier-flask-app_backend_1 is up-to-date
+ubuntu@ip-172-31-26-224:~/projects/two-tier-flask-app$
+
+
 - Use the `docker-compose scale` command to increase or decrease the number of replicas for a specific service. You can also add [`replicas`](https://stackoverflow.com/questions/63408708/how-to-scale-from-within-docker-compose-file) in deployment file for _auto-scaling_.
+
+
 - Use the `docker-compose ps` command to view the status of all containers, and `docker-compose logs` to view the logs of a specific service.
+
+  -
+docker-compose ps
+          Name                     Command           State            Ports
+------------------------------------------------------------------------------------
+two-tier-flask-            python app.py             Up      0.0.0.0:5000-
+app_backend_1                                                >5000/tcp,:::5000-
+                                                             >5000/tcp
+two-tier-flask-            docker-entrypoint.sh      Up      0.0.0.0:3306-
+app_mysql_1                mysqld                            >3306/tcp,:::3306-
+                                                             >3306/tcp, 33060/tcp
+                                                             
+                                                             
+docker-compose logs
+Attaching to two-tier-flask-app_backend_1, two-tier-flask-app_mysql_1
+backend_1  |  * Serving Flask app 'app' (lazy loading)
+backend_1  |  * Environment: production
+backend_1  |    WARNING: This is a development server. Do not use it in a production deployment.
+backend_1  |    Use a production WSGI server instead.
+backend_1  |  * Debug mode: on
+backend_1  | WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+backend_1  |  * Running on all addresses (0.0.0.0)
+backend_1  |  * Running on http://127.0.0.1:5000
+backend_1  |  * Running on http://172.20.0.3:5000
+backend_1  | Press CTRL+C to quit
+
+
+
 - Use the `docker-compose down` command to stop and remove all containers, networks, and volumes associated with the application
+
+docker-compose down
+Stopping two-tier-flask-app_backend_1 ... done
+Stopping two-tier-flask-app_mysql_1   ... done
+Removing two-tier-flask-app_backend_1 ... done
+Removing two-tier-flask-app_mysql_1   ... done
+Removing network two-tier-flask-app_default
+ubuntu@ip-172-31-26-224:~/projects/two-tier-flask-app$
+
+
 
 ## Task-2
 
