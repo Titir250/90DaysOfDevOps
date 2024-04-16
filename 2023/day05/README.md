@@ -26,6 +26,29 @@ then it creates 50 directories as `Movie20 Movie21 Movie23 ...Movie50`
 Notes:
 You may need to use loops or commands (or both), based on your preference . [Check out this reference: https://www.geeksforgeeks.org/bash-scripting-for-loop/](https://www.geeksforgeeks.org/bash-scripting-for-loop/)
 
+#!/bin/bash
+
+<< task
+Create custom directories
+with a given range in arguments
+first argument is the directory name then the range
+task
+
+
+
+mkdir $1 && cd $1
+
+
+
+for (( i=$2; i<=$3; i++ ))
+
+
+do
+        
+        mkdir "${1}${i}"
+
+done
+
 2.  Create a Script to backup all your work done till now.
 
 Backups are an important part of DevOps Engineer's day to Day activities
