@@ -26,15 +26,20 @@ A shell script is a computer program designed to be run by a linux shell, a comm
   #!/bin/bash
 
 echo "I will complete #90DaysOofDevOps challenge"
+
 echo $1
+
 if [ $1 -gt $2 ]
+
 then
+        
         echo "1st number is greater."
+        
 else
         echo "2nd number is greater."
 
 fi
-~     
+     
 
 Was it difficult?
 
