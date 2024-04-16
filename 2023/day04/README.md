@@ -36,7 +36,8 @@ then
         echo "1st number is greater."
         
 else
-        echo "2nd number is greater."
+       
+       echo "2nd number is greater."
 
 fi
      
