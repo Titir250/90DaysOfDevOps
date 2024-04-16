@@ -22,7 +22,35 @@ Each of the three permissions are assigned to three defined categories of users.
 
 2. Write an article about File Permissions based on your understanding from the notes.
 
+  File Permissions are applied in linux os for resctricting the access of a file to the specific group of users and there are 3 levels of access read,write and execute. We a can give these 3 permissions to owner, group and others.
+
 3. Read about ACL and try out the commands `getfacl` and `setfacl`
+
+   ACL means access control list. It is an evolved version of file permissionn this pkg needs to be installed separately as not provided out of the box(sudo apt install acl). Using this we can give permission for a specific file to a specific user or group. All the users in the same group does not necessarily have same permission attached.
+
+   
+
+   
+titir@Titir:~/scripts$ sudo setfacl -m u:bheem:rwx abc.sh
+
+titir@Titir:~/scripts$ getfacl abc.sh
+
+# file: abc.sh
+
+# owner: bheem
+
+# group: bheem
+
+user::r--
+
+user:bheem:rwx
+
+group::---
+
+mask::rwx
+
+other::---
+
 
 In case of any doubts, post it on [Discord Community](https://discord.gg/hs3Pmc5F)
 
